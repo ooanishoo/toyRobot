@@ -1,0 +1,32 @@
+{
+  "name": "toyRobot",
+  "version": "1.0.0",
+  "description": "A toy robot simulator written in Node.js for interview @ ZoneDigital",
+  "main": "dist/app.js",
+  "repository": "git@github.com:tsangbot/toyRobot.git",
+  "author": "Chun Nam Brian Tsang <8r14n754n9@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "clean": "rimraf dist",
+    "lint": "tslint --force --fix \"src/**/*.ts\" \"test/**/*.ts\"",
+    "prebuild": "yarn lint",
+    "build": "yarn run clean && echo Using TypeScript && tsc --version && tsc --pretty",
+    "pretest": "yarn build",
+    "start": "node ./dist/main"
+  },
+  "dependencies": {
+    "lodash": "^4.17.11",
+    "nodemon": "^1.18.10"
+  },
+  "devDependencies": {
+    "@types/mocha": "^5.2.6",
+    "@types/node": "^11.10.0",
+    "mocha": "^6.0.2",
+    "rimraf": "^2.6.3",
+    "ts-node": "^8.0.2",
+    "tsc": "^1.20150623.0",
+    "tslint": "^5.13.1",
+    "typedoc": "^0.14.2",
+    "typescript": "^3.3.3333"
+  }
+}

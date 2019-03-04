@@ -1,0 +1,19 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:latest"
+    ],
+    "rules": {
+        "indent": [
+            true,
+            "spaces"
+        ],
+        "jsdoc-format": true,
+        "no-var-keyword": true,
+        "quotemark": [
+            true,
+            "double",
+            "avoid-escape"
+        ]
+    }
+}
