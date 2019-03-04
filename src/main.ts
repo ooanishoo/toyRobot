@@ -1,5 +1,16 @@
-function greeter(personName: string) {
-    return `Hello ${personName}!`;
+#!/usr/bin/env node
+export default class Robot {
+  public name: string;
+
+  constructor(name: string) {
+    this.name = name;
   }
 
-process.stdout.write(greeter("tsangBot"));
+  /**
+   * greeter
+   * personName: string
+   */
+  public greeter(personName: string) {
+    return `Hello ${personName}!`;
+  }
+}

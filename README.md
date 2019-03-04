@@ -6,8 +6,8 @@ A toy robot simulator written in Node.js for interview @ ZoneDigital
 ## Prerequisites
 Check for node, npm, and npx
 
-- [node](https://nodejs.org/en/)
-- npm
+- [node](https://nodejs.org/en/), Run ` node --version` in terminal to verify
+- npm comes with node
 - [yarn](https://yarnpkg.com/en/docs/install#mac-stable)
 
 
@@ -17,7 +17,9 @@ If you feel you have the need to become a node.js ninja, then you can always go 
 
 ## Starting things up
 
-Assuming you have complete the prereqisites (Node.js v6 and install `yarn` as package manager)
+The application's source code is located in `src/` can built using `make`. This will transpile the source code [TypeScript](https://www.typescriptlang.org/docs/home.html) and publish it to `dist`.
+
+Assuming you have complete the prereqisites (Node.js v6 and install `yarn` as package manager), you can start the application by the commands below.
 
 ```shell
 $ yarn
@@ -41,7 +43,7 @@ $ yarn watch:test
 
 Use of Make
 
-I am lazy, and I try not to remember all the build commands since I can easily forgot about them. Make is a great Unix tool that simplifies building programs when they are composed from many files, or building many programs simultaneously. It is able to determine when source files have changed and rebuild only those components needed for an update.
+I am lazy, and I can easily forgot all the build commands. Make, is a great Unix tool that simplifies building programs when they are composed from many files, or building many programs simultaneously. It is able to determine when source files have changed and rebuild only those components needed for an update.
 
 ```
 From Wiki
