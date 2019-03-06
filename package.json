@@ -6,9 +6,10 @@
   "author": "Chun Nam Brian Tsang <8r14n754n9@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "clean": "rimraf dist",
+    "clean": "rimraf dist doc",
+    "doc": "typedoc",
     "lint": "tslint --force --fix \"src/**/*.ts\" \"test/**/*.ts\"",
-    "prebuild": "yarn run lint",
+    "prebuild": "yarn run lint && yarn run doc",
     "build": "yarn run clean && echo Using TypeScript && tsc --version && tsc --pretty",
     "test": "mocha",
     "prestart": "yarn build",
