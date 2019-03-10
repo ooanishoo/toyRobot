@@ -169,9 +169,17 @@ describe("Commander", () => {
             hook.unhook();
         });
 
-        it('should input PLACE command "PLACE 0,2,2" and Robot is undefined', () => {
+        it('should input PLACE command "PLACE 0,2,23sdfs" and Robot is undefined', () => {
             hook = captureStream(process.stdout);
             commander.execute("PLACE 0,2,23sdfs");
+            expect(commander.robot).to.eq(undefined);
+            expect(hook.captured()).to.eq("");
+            hook.unhook();
+        });
+
+        it('should input PLACE command "PLACE 2,2,2" and Robot is undefined', () => {
+            hook = captureStream(process.stdout);
+            commander.execute("PLACE 2,2,2");
             expect(commander.robot).to.eq(undefined);
             expect(hook.captured()).to.eq("");
             hook.unhook();

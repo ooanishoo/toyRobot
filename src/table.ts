@@ -1,4 +1,6 @@
+/** Utility type Integer, intersected as an object type */
 export type Int = number & { __int__: void };
+/** Utility function turn number type to Integer by rounding input to a whole number */
 export const roundToInt = (num: number): Int => Math.round(num) as Int;
 
 /** Table position x,y */
@@ -10,7 +12,6 @@ export interface ITablePosition {
 /** Table representing the playing boundary */
 export default class Table {
 
-  // public surfaceAera: number [][];
   public width: Int;
   public height: Int;
 
@@ -26,8 +27,8 @@ export default class Table {
   }
 
   /**
-   * Check if corridates are out of table boundary
-   * @param position pass in the {x,y} cooridates for check
+   * Check if coordinates are out of table boundary
+   * @param position pass in the {x,y} coordinates for check
    */
   public outOfBoundary(position: ITablePosition): boolean {
     if (((this.width - 1) < position.x) ||

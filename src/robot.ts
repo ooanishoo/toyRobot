@@ -37,7 +37,7 @@ export default class Robot {
   }
 
   /**
-   * turn the robot left from the direction it is current facing, anit-clockwise North > West > South > East
+   * turn the robot left from the direction it is current facing, anti-clockwise North > West > South > East
    */
   public turnLeft(): Directions {
     const newDirection: Directions = this.direction === Directions.NORTH ? Directions.WEST : this.direction - 1;

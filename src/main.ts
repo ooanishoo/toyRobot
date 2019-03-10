@@ -30,7 +30,7 @@ process.stdout.write("toyRobot Running!\n" +
 const cli = createInterface(readLineOptions);
 
 cli.prompt(true);
-
+/** Command line parser, reading input using readline modules */
 cli.on("line", (line: string) => {
   commander.execute(line);
   cli.prompt(true);

@@ -71,7 +71,7 @@ function commandTransformer(inputString: string): number[] {
 
 /**
  * Takes string array representation of input string, lookup direction and transform parameters to Array of numbers
- * @param inputValues input command coverted to array of string split by ","
+ * @param inputValues input command converted to array of string split by ","
  * @returns an array of number [x, y, direction]
  */
 function stringToNumber(inputValues: string[]): number[] {
@@ -81,10 +81,11 @@ function stringToNumber(inputValues: string[]): number[] {
       const face: string = stringToDirections.get(inputValues[2]).toString();
       inputValues.pop();
       inputValues.push(face);
-    }
-    for (const value of inputValues) {
-      if (!isNaN(+value)) {
-        stringToNumberArray.push(+value);
+
+      for (const value of inputValues) {
+          if (!isNaN(+value)) {
+            stringToNumberArray.push(+value);
+          }
       }
     }
     return stringToNumberArray;

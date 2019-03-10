@@ -1,6 +1,7 @@
 .git
 .gitignore
 .dockerignore
+.vscode/
 node_modules/
 dist
 Dockerfile

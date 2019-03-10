@@ -35,14 +35,14 @@ This is the directory/file structure once you have checked out from the git repo
 ├── package.json
 ├── src
 │   ├── conf.json
-│   ├── controller.ts
+│   ├── commander.ts
 │   ├── main.ts
 │   ├── robot.ts
 │   └── table.ts
 ├── test
-│   ├── controller-test.spec.ts
+│   ├── commander-test.spec.ts
 │   ├── robot-test.spec.ts
-│   └── table-top-test.spec.ts
+│   └── table-test.spec.ts
 ├── toyRobot.iml
 ├── tsconfig.json
 ├── tslint.json
