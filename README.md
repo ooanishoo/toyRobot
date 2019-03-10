@@ -79,11 +79,15 @@ $ yarn dev
 
 Running the application in a docker container, provided you have installed docker.
 - [docker](https://www.docker.com/get-started)
+- [toyrobot-dockerhub](https://hub.docker.com/r/tsangbot/toyrobot)
 
 Docker containers wrap up software and its dependencies into a single unit that includes everything it needs to run. This guarantees the application will always run the same and makes collaboration as simple as sharing a container image.
 
 Use the following command to build container from source
 ``` shell
+# The docker image for toyrobot is 
+tsangbot/toyrobot
+
 # To pull the image from Docker Hub
 docker pull ${IMAGE}:latest
 

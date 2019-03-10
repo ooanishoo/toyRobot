@@ -1,0 +1,327 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>toyrobot</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.js" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">toyrobot</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="globals.html">Globals</a>
+				</li>
+			</ul>
+			<h1> toyrobot</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<h1 id="toyrobot">toyrobot</h1>
+				<p>A toy robot simulator written in Node.js for interview @ ZoneDigital</p>
+				<h1 id="how-to-get-things-started-">How to get things started?</h1>
+				<h2 id="prerequisites">Prerequisites</h2>
+				<p>Check for node, npm, and npx</p>
+				<ul>
+					<li><a href="https://nodejs.org/en/">node</a>, Run <code>node --version</code> in terminal to verify</li>
+					<li>npm comes with node</li>
+					<li><a href="https://yarnpkg.com/en/docs/install#mac-stable">yarn</a></li>
+				</ul>
+				<p>Alternatively if you are on Mac OSX, you can install these packages using <a href="https://brew.sh/">brew package manager for Mac OSX</a> </p>
+				<p>If you feel you have the need to become a node.js ninja, then you can always go that extra mile and install node with <a href="https://github.com/creationix/nvm/blob/master/README.md">nvm</a>, the Node.js version manager. With this utility application, you can have multiple Node.js versions installed on your system, and switching between them is only a command away. </p>
+				<h2 id="starting-things-up">Starting things up</h2>
+				<p>The application&#39;s source code is located in <code>src/</code> can built using <code>make</code>. This will transpile the source code <a href="https://www.typescriptlang.org/docs/home.html">TypeScript</a> and publish it to <code>dist</code>.</p>
+				<p>This is the directory/file structure once you have checked out from the git repository.</p>
+				<pre><code class="language-shell">├── Dockerfile
+├── LICENSE
+├── Makefile
+├── README.md
+├── docs
+│   ├── assets
+│   ├── classes
+│   ├── enums
+│   ├── globals.html
+│   ├── index.html
+│   ├── interfaces
+│   └── modules
+├── package.json
+├── src
+│   ├── conf.json
+│   ├── commander.ts
+│   ├── main.ts
+│   ├── robot.ts
+│   └── table.ts
+├── test
+│   ├── commander-test.spec.ts
+│   ├── robot-test.spec.ts
+│   └── table-test.spec.ts
+├── toyRobot.iml
+├── tsconfig.json
+├── tslint.json
+└── yarn.lock</code></pre>
+				<p>Assuming you have complete the prerequisites (Node.js v6 and install <code>yarn</code> as package manager), you can start the application by the commands below.
+				This will run the full build cycle:</p>
+				<ul>
+					<li>Resolve package dependencies with yarn</li>
+					<li>Clean dist/ doc/</li>
+					<li>Linter, syntax check on all .ts files</li>
+					<li>Execute test with mocha (pre-compilation)</li>
+					<li>Compile Typescript files to Javascript files to dist/ with tsc</li>
+					<li>Generate Documentation from sourceCode using <a href="https://typedoc.org/">typeDoc</a> </li>
+					<li>Start the application toyRobot</li>
+				</ul>
+				<pre><code class="language-shell"><span class="hljs-meta">$</span><span class="bash"> yarn</span>
+<span class="hljs-meta">$</span><span class="bash"> yarn prod</span></code></pre>
+				<p><strong>For development</strong>, run the following commands in separate shells.</p>
+				<pre><code class="language-shell"><span class="hljs-meta">$</span><span class="bash"> yarn dev</span></code></pre>
+				<ul>
+					<li>Resolve package dependencies with yarn</li>
+					<li>Clean dist/ doc/</li>
+					<li>Linter, syntax check on all .ts files</li>
+					<li>Execute test with mocha (pre-compilation)</li>
+					<li>Start the application but using ts-node an executable, allow running TypeScript files (*.ts) without first compiling it to plain JavaScript.</li>
+				</ul>
+				<h2 id="alternative">Alternative</h2>
+				<p>Running the application in a docker container, provided you have installed docker.</p>
+				<ul>
+					<li><a href="https://www.docker.com/get-started">docker</a></li>
+					<li><a href="https://hub.docker.com/r/tsangbot/toyrobot">toyrobot-dockerhub</a></li>
+				</ul>
+				<p>Docker containers wrap up software and its dependencies into a single unit that includes everything it needs to run. This guarantees the application will always run the same and makes collaboration as simple as sharing a container image.</p>
+				<p>Use the following command to build container from source</p>
+				<pre><code class="language-shell"><span class="hljs-meta">#</span><span class="bash"> The docker image <span class="hljs-keyword">for</span> toyrobot is </span>
+tsangbot/toyrobot
+<span class="hljs-meta">
+#</span><span class="bash"> To pull the image from Docker Hub</span>
+docker pull ${IMAGE}:latest
+<span class="hljs-meta">
+#</span><span class="bash"> To build the image, replace <span class="hljs-variable">${IMAGE}</span> with the desired name </span>
+docker build . -t ${IMAGE}:latest
+<span class="hljs-meta">
+#</span><span class="bash"> To run the image <span class="hljs-keyword">in</span> a container, starts the application</span>
+docker run --rm -it ${IMAGE} /bin/ash</code></pre>
+				<p>I am lazy, and I can easily forgot all the build commands. Make, is a great Unix tool that simplifies building programs when they are composed from many files, or building many programs simultaneously. </p>
+				<h3 id="use-of-make">Use of Make</h3>
+				<pre><code><span class="hljs-keyword">From</span> Wiki
+A makefile is a special file, containing shell commands, that you create <span class="hljs-keyword">and</span> name makefile (<span class="hljs-keyword">or</span> Makefile depending upon the system). <span class="hljs-keyword">While</span> <span class="hljs-keyword">in</span> the directory containing this makefile, you will<span class="hljs-built_in"> type </span>make <span class="hljs-keyword">and</span> the commands <span class="hljs-keyword">in</span> the makefile will be executed</code></pre><p>Using make, the command to build and run docker container is simplified to</p>
+				<pre><code class="language-shell"><span class="hljs-meta">#</span><span class="bash"> To pull the image from Docker Hub</span>
+make docker-pull 
+<span class="hljs-meta">
+#</span><span class="bash"> To build the image from <span class="hljs-built_in">local</span> directory</span>
+make docker-build
+<span class="hljs-meta">
+#</span><span class="bash"> To run the image <span class="hljs-keyword">in</span> a container, starts the application</span>
+make docker-run
+<span class="hljs-meta">
+#</span><span class="bash"> Output</span>
+toyRobot Running!
+Valid commands: PLACE X,Y,F (Direction: NORTH, EAST, SOUTH, WEST) or LEFT or RIGHT or MOVE or REPORT.</code></pre>
+				<h2 id="ideal-development-environment">Ideal development environment</h2>
+				<p>I have been using <a href="https://code.visualstudio.com/download">VScode</a> from Microsoft for this project. I have included the VScode project configuration in the repository, it is stored under <code>.vscode.</code> You will find task originate from npm scripts stored in <code>package.json</code>. </p>
+				<h3 id="install-packages">Install packages</h3>
+				<p>Globals</p>
+				<pre><code>$ yarn <span class="hljs-meta">global</span> <span class="hljs-keyword">add</span> tslint typescript typedoc mocha gulp-<span class="hljs-keyword">cli</span></code></pre><h1 id="application-instructions">Application Instructions</h1>
+				<p>toyRobot is a CLI Application that reads commands from command line stdin of the following form:</p>
+				<pre><code class="language-shell">PLACE X,Y,FACE
+MOVE
+LEFT
+RIGHT
+REPORT</code></pre>
+				<ul>
+					<li>PLACE will put the toy robot on the table in position X,Y and facing NORTH, SOUTH, EAST or WEST</li>
+					<li>The origin (0,0) is considered to be the SOUTH WEST most corner on the table</li>
+					<li>The first valid command to the robot is a PLACE command, after that, any sequence of commands may be issued, in any order, including another PLACE command</li>
+					<li>The application will discard all commands in the sequence until a valid PLACE command has been executed</li>
+					<li>MOVE will move the toy robot 1 unit forward in the direction it is currently facing</li>
+					<li>LEFT and RIGHT will rotate the robot 90 degrees in the specified direction without changing the position of the robot</li>
+					<li>REPORT will announce the X,Y and F of the robot. This can be in any form, but standard output is sufficient</li>
+					<li>Input is only standard input as MVP, will include reading text file in future releases.</li>
+				</ul>
+				<h2 id="run-example">Run Example</h2>
+				<pre><code class="language-shell"><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">echo</span> Compile TypeScript to JS &amp;&amp; tsc --pretty &amp;&amp; yarn run doc</span>
+Compile TypeScript to JS
+<span class="hljs-meta">$</span><span class="bash"> typedoc</span>
+
+Using TypeScript 3.2.4 from /Users/ctsang201/code/mystuff/toyRobot/node_modules/typedoc/node_modules/typescript/lib
+Rendering [========================================] 100%
+
+Documentation generated at /Users/ctsang201/code/mystuff/toyRobot/docs
+
+✨  Done in 11.78s.
+yarn run v1.13.0
+<span class="hljs-meta">$</span><span class="bash"> node ./dist/main</span>
+toyRobot Running!
+Valid commands: PLACE X,Y,F (Direction: NORTH, EAST, SOUTH, WEST) or LEFT or RIGHT or MOVE or REPORT.
+<span class="hljs-meta">&gt;</span><span class="bash"> PLACE 0,0,NORTH</span>
+<span class="hljs-meta">&gt;</span><span class="bash"> MOVE</span>
+<span class="hljs-meta">&gt;</span><span class="bash"> REPORT</span>
+0, 1, NORTH
+<span class="hljs-meta">&gt;</span><span class="bash"> PLACE 0,0,NORTH</span>
+<span class="hljs-meta">&gt;</span><span class="bash"> LEFT</span>
+<span class="hljs-meta">&gt;</span><span class="bash"> REPORT</span>
+0, 0, WEST
+<span class="hljs-meta">&gt;</span><span class="bash"> PLACE 1,2,EAST</span>
+<span class="hljs-meta">&gt;</span><span class="bash"> MOVE</span>
+<span class="hljs-meta">&gt;</span><span class="bash"> MOVE</span>
+<span class="hljs-meta">&gt;</span><span class="bash"> LEFT</span>
+<span class="hljs-meta">&gt;</span><span class="bash"> MOVE</span>
+<span class="hljs-meta">&gt;</span><span class="bash"> REPORT</span>
+3, 3, NORTH
+<span class="hljs-meta">&gt;</span><span class="bash"> </span></code></pre>
+				<h1 id="application-constraints">Application Constraints</h1>
+				<ul>
+					<li>The toy robot must not fall off the table during movement. This also includes the initial placement of the toy robot</li>
+					<li>Any move that would cause the robot to fall must be ignored</li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="globals.html"><em>Globals</em></a>
+					</li>
+					<li class="label tsd-is-external">
+						<span>Internals</span>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_commander_.html">"commander"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_main_.html">"main"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_robot_.html">"robot"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_table_.html">"table"</a>
+					</li>
+					<li class="label tsd-is-external">
+						<span>Externals</span>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_conf_.html">"conf"</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>
