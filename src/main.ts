@@ -1,16 +1,37 @@
 #!/usr/bin/env node
-export default class Robot {
-  public name: string;
+import * as process from "process";
+import { createInterface, ReadLineOptions } from "readline";
+import Commander from "./commander";
+import conf from "./conf.json";
+import Table, {roundToInt} from "./table";
 
-  constructor(name: string) {
-    this.name = name;
-  }
+/**
+ * This is the entry point of the application
+ * Instantiates table and commander instances, provide a CLI parser for stdin and stdout
+ */
 
-  /**
-   * greeter
-   * personName: string
-   */
-  public greeter(personName: string) {
-    return `Hello ${personName}!`;
-  }
-}
+/** table width and height loaded in from json config */
+const tableWidth: number = conf.table.width;
+const tableHeight: number = conf.table.height;
+/** table width and height rounded up/down */
+const table = new Table(roundToInt(tableWidth), roundToInt(tableHeight));
+/** InstantiateDictionary the cont */
+const commander = new Commander(table);
+/** using standard readline for sending commands */
+const readLineOptions: ReadLineOptions = {
+  input: process.stdin,
+  output: process.stdout,
+  terminal: false,
+};
+
+process.stdout.write("toyRobot Running!\n" +
+"Valid commands: PLACE X,Y,F (Direction: NORTH, EAST, SOUTH, WEST) or LEFT or RIGHT or MOVE or REPORT.\n");
+
+const cli = createInterface(readLineOptions);
+
+cli.prompt(true);
+
+cli.on("line", (line: string) => {
+  commander.execute(line);
+  cli.prompt(true);
+});

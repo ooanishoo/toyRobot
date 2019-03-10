@@ -1,0 +1,15 @@
+{
+    "table": {
+        "width": 5,
+        "height": 5
+    },
+    "robot":{
+        "face": [
+            "NORTH",
+            "EAST",
+            "SOUTH",
+            "WEST"
+        ],
+        "move": 1
+    }
+}

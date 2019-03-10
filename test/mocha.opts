@@ -1,5 +1,4 @@
 --reporter=spec
---growl
 --ui bdd
 --require ts-node/register
 --recursive

@@ -6,15 +6,15 @@
   "author": "Chun Nam Brian Tsang <8r14n754n9@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "clean": "rimraf dist doc",
+    "clean": "rimraf dist docs",
     "doc": "typedoc",
     "lint": "tslint --force --fix \"src/**/*.ts\" \"test/**/*.ts\"",
-    "prebuild": "yarn run lint && yarn run doc",
-    "build": "yarn run clean && echo Using TypeScript && tsc --version && tsc --pretty",
-    "test": "mocha",
-    "prestart": "yarn build",
+    "prebuild": "yarn run clean && yarn run lint && mocha",
+    "build": "echo Complie TypeScript to JS && tsc --pretty && yarn run doc",
+    "test": "yarn run prebuild",
+    "dev": "yarn prebuild && ts-node ./src/main",
+    "prod": "yarn run build && yarn start",
     "start": "node ./dist/main"
-    
   },
   "files": [
     "dist"
